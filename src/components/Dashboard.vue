@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h1>user dash here</h1>
-
     <CurrentlyReadingDisplay />
 
     <BooksReadDisplay />

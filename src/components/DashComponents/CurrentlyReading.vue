@@ -7,13 +7,28 @@
       <v-card-text>
         <h1>title of book here</h1>
       </v-card-text>
+      <v-card-actions>
+        <UpdateStatusDialog />
+      </v-card-actions>
     </v-card>
   </div>
 </template>
 
+<script>
+import UpdateStatusDialog from "./UpdateStatus.vue";
+
+export default {
+  name: "CurrentlyReadingDisplay",
+
+  components: {
+    UpdateStatusDialog,
+  },
+};
+</script>
+
 <style scoped>
 .currently-reading-display {
   width: 65%;
-  margin: 2px auto;
+  margin: 7px auto;
 }
 </style>

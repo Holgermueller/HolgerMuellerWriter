@@ -29,7 +29,7 @@
         <v-card-actions>
           <v-btn>Cancel</v-btn>
           v-spacer
-          <v-btn>Add book</v-btn>
+          <v-btn @click.prevent="addBook">Add book</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
