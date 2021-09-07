@@ -16,11 +16,25 @@
           <v-form ref="form">
             <v-container>
               <v-row>
-                <v-text-field v-model="title"> </v-text-field>
+                <v-text-field
+                  id="title"
+                  v-model="title"
+                  outlined
+                  clearable
+                  placeholder="Title..."
+                >
+                </v-text-field>
               </v-row>
 
               <v-row>
-                <v-text-field v-model="author"> </v-text-field>
+                <v-text-field
+                  id="author"
+                  v-model="author"
+                  outlined
+                  clearable
+                  placeholder="Author"
+                >
+                </v-text-field>
               </v-row>
             </v-container>
           </v-form>
@@ -28,7 +42,7 @@
 
         <v-card-actions>
           <v-btn>Cancel</v-btn>
-          v-spacer
+          <v-spacer> </v-spacer>
           <v-btn @click.prevent="addBook">Add book</v-btn>
         </v-card-actions>
       </v-card>

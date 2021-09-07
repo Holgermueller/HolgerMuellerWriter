@@ -40,12 +40,12 @@ export default {
 
 <style scoped>
 .section-header {
-  width: 74%;
+  width: 75%;
   margin: 4px auto;
 }
 
 .book-card {
-  width: 74%;
+  width: 75%;
   margin: 4px auto;
 }
 </style>
