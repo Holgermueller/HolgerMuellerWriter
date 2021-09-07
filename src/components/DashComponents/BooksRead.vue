@@ -13,11 +13,26 @@
         <h2>
           {{ book.title }}
         </h2>
+
+        <v-spacer></v-spacer>
+
+        <v-chip>
+          More info
+          <v-icon right>
+            mdi-arrow-right-bold
+          </v-icon>
+        </v-chip>
       </v-card-title>
 
       <v-card-subtitle>
         <h3>By: {{ book.author }}</h3>
       </v-card-subtitle>
+
+      <v-card-actions>
+        Began: {{ book.beganReading }}
+        <v-spacer></v-spacer>
+        Finished: {{ book.finished }}
+      </v-card-actions>
     </v-card>
   </div>
 </template>

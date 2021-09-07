@@ -41,7 +41,7 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn>Cancel</v-btn>
+          <v-btn @click="closeDialog">Cancel</v-btn>
           <v-spacer> </v-spacer>
           <v-btn @click.prevent="addBook">Add book</v-btn>
         </v-card-actions>
@@ -71,7 +71,9 @@ export default {
       this.dialog = false;
     },
 
-    addBook() {},
+    addBook() {
+      console.log(this.title, this.author);
+    },
   },
 };
 </script>
