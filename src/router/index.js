@@ -1,12 +1,12 @@
 import Vue from "vue";
-import VueRouter from "vue-router";
+import Router from "vue-router";
 import SignIn from "../components/SignIn";
 import Dashboard from "../components/Dashboard";
 import SingleBook from "../components/SingleBook";
 
-Vue.use(VueRouter);
+Vue.use(Router);
 
-let router = new VueRouter({
+export default new Router({
   mode: "history",
   routes: [
     {
@@ -30,5 +30,3 @@ let router = new VueRouter({
     },
   ],
 });
-
-export default router;

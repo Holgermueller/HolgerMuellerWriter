@@ -8,7 +8,12 @@
       </v-card-title>
     </v-card>
 
-    <v-card v-for="(book, index) in books" :key="index" class="book-card">
+    <v-card
+      v-for="(book, index) in books"
+      :key="index"
+      id="book.id"
+      class="book-card"
+    >
       <v-card-title>
         <h2>
           {{ book.title }}
@@ -16,7 +21,7 @@
 
         <v-spacer></v-spacer>
 
-        <v-chip :to="'/singleBook/' + id">
+        <v-chip :to="'/singleBook/' + book.id">
           More info
           <v-icon right>
             mdi-arrow-right-bold

@@ -1,13 +1,15 @@
 <template>
   <div>
-    <v-card>
+    <v-card class="book-card">
       <v-card-title>
-        Single book here.
+        {{ book.title }}
       </v-card-title>
 
-      <v-card-text>
-        {{ book }}
-      </v-card-text>
+      <v-card-subtitle>
+        {{ book.author }}
+      </v-card-subtitle>
+
+      <v-card-text> Book data here: {{ book }} </v-card-text>
     </v-card>
   </div>
 </template>
@@ -20,8 +22,15 @@ export default {
 
   computed: {
     book() {
-      return this.$store.getters.book(this.id);
+      return this.$store.getters.singleBook(this.id);
     },
   },
 };
 </script>
+
+<style scoped>
+.book-card {
+  width: 75%;
+  margin: 8px auto;
+}
+</style>
