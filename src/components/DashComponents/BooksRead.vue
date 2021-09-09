@@ -16,7 +16,7 @@
 
         <v-spacer></v-spacer>
 
-        <v-chip>
+        <v-chip :to="'/singleBook/' + id">
           More info
           <v-icon right>
             mdi-arrow-right-bold
