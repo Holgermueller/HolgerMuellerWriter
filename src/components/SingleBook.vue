@@ -5,14 +5,24 @@
         {{ book.title }}
       </v-card-title>
 
-      <v-card-subtitle>
-        {{ book.author }}
-      </v-card-subtitle>
+      <v-card-subtitle>By: {{ book.author }}</v-card-subtitle>
 
-      <v-card-text> Book data here: {{ book }} </v-card-text>
+      <v-card-text>
+        <div class="rating">
+          Rating: rating goes here
+        </div>
+
+        <div class="time-spent-reading">
+          Began: {{ book.beganReading }}
+
+          Finished: {{ book.finished }}
+        </div>
+      </v-card-text>
 
       <v-card-actions>
         <AddComments />
+        <v-spacer></v-spacer>
+        <RateThisBook />
       </v-card-actions>
     </v-card>
   </div>
@@ -20,12 +30,14 @@
 
 <script>
 import AddComments from "./SingleBookComp/AddComments.vue";
+import RateThisBook from "./SingleBookComp/RateThisBook.vue";
 
 export default {
   name: "SingleBookPage",
 
   components: {
     AddComments,
+    RateThisBook,
   },
 
   props: ["id"],
