@@ -10,13 +10,23 @@
       </v-card-subtitle>
 
       <v-card-text> Book data here: {{ book }} </v-card-text>
+
+      <v-card-actions>
+        <AddComments />
+      </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import AddComments from "./SingleBookComp/AddComments.vue";
+
 export default {
   name: "SingleBookPage",
+
+  components: {
+    AddComments,
+  },
 
   props: ["id"],
 
