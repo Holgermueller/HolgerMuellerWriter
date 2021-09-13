@@ -72,7 +72,15 @@ export default {
     },
 
     addBook() {
-      console.log(this.title, this.author);
+      const book = {
+        title: this.title,
+        author: this.author,
+      };
+
+      this.$store.dispatch("addBook", book);
+
+      this.clearForm();
+      this.closeDialog();
     },
   },
 };

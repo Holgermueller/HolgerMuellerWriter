@@ -19,9 +19,25 @@ export default {
     ],
   },
 
-  mutations: {},
+  mutations: {
+    ADD_BOOK(state, payload) {
+      state.books.push(payload);
+    },
+  },
 
-  acitons: {},
+  actions: {
+    addBook({ commit }, payload) {
+      const book = {
+        title: payload.title,
+        author: payload.author,
+        id: Math.random(),
+        beganReading: new Date(),
+        finished: "",
+      };
+
+      commit("ADD_BOOK", book);
+    },
+  },
 
   getters: {
     books(state) {
