@@ -17,6 +17,10 @@
 
           Finished: {{ book.finished }}
         </div>
+
+        <div class="comments">
+          Comments go here
+        </div>
       </v-card-text>
 
       <v-card-actions>
