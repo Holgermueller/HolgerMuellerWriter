@@ -1,16 +1,41 @@
 <template>
   <div id="Register">
     <v-card-text>
-      <v-form>
-        <v-text-field placeholder="Email" clearable outlined></v-text-field>
-        <v-text-field placeholder="Password" clearable outlined></v-text-field>
+      <v-form ref="form">
+        <v-text-field
+          type="email"
+          id="registrationEmail"
+          v-model="email"
+          placeholder="Email"
+          clearable
+          outlined
+        ></v-text-field>
+        <v-text-field
+          type="password"
+          id="registrationPassword"
+          v-model="password"
+          placeholder="Password"
+          clearable
+          outlined
+        ></v-text-field>
       </v-form>
     </v-card-text>
 
     <v-card-actions>
-      <v-btn>Cancel</v-btn>
+      <v-btn id="cancelRegistration" @click.prevent="clearForm" elevation="0">
+        <v-icon left>mdi-cancel</v-icon>
+        Cancel</v-btn
+      >
       <v-spacer></v-spacer>
-      <v-btn>Submit</v-btn>
+      <v-btn
+        id="submitRegistration"
+        @click.prevent="submitRegistrationData"
+        elevation="0"
+        :disabled="!formIsValid"
+      >
+        Submit
+        <v-icon right>mdi-login</v-icon>
+      </v-btn>
     </v-card-actions>
   </div>
 </template>
@@ -18,6 +43,31 @@
 <script>
 export default {
   name: "RegisterForm",
+
+  data() {
+    return {
+      email: "",
+      password: "",
+    };
+  },
+
+  computed: {
+    formIsValid() {
+      return this.email !== "" && this.password !== "";
+    },
+  },
+
+  methods: {
+    clearForm() {
+      this.$refs.form.reset();
+    },
+
+    submitRegistrationData() {
+      console.log(this.password, this.email);
+
+      this.clearForm();
+    },
+  },
 };
 </script>
 
