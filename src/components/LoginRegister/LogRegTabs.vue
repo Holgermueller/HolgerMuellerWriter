@@ -24,12 +24,12 @@
             <v-card-text>
               <div v-if="form.formName === 'Register'">
                 <h2>
-                  register form
+                  <RegistrationForm />
                 </h2>
               </div>
 
               <div v-else>
-                Login form
+                <LoginForm />
               </div>
             </v-card-text>
           </v-card>
@@ -40,8 +40,16 @@
 </template>
 
 <script>
+import RegistrationForm from "./Register.vue";
+import LoginForm from "./Login.vue";
+
 export default {
   name: "LoginRegisterTabs",
+
+  components: {
+    RegistrationForm,
+    LoginForm,
+  },
 
   data() {
     return {
