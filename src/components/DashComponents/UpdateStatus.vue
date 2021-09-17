@@ -11,13 +11,21 @@
         </v-card-title>
 
         <v-card-text>
-          How's it going?
+          <v-form ref="form">
+            <v-textarea
+              placeholder="Any comments to add?"
+              outlined
+            ></v-textarea>
+          </v-form>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn>cancel</v-btn>
+          <v-btn @click.prevent="closeDialog && clearForm">
+            <v-icon left>mdi-cancel</v-icon>
+            cancel</v-btn
+          >
           <v-spacer></v-spacer>
-          <v-btn>I'm finished!!</v-btn>
+          <v-btn @click.prevent="updateStatus">I'm finished!!</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -33,6 +41,18 @@ export default {
       dialog: false,
       finished: false,
     };
+  },
+
+  methods: {
+    closeDialog() {
+      this.dialog = false;
+    },
+
+    clearForm() {
+      this.$refs.form.reset();
+    },
+
+    updateStatus() {},
   },
 };
 </script>
