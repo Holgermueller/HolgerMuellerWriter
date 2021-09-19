@@ -15,12 +15,6 @@
       <v-tabs-items v-model="tab">
         <v-tab-item v-for="(form, index) in forms" :key="index">
           <v-card>
-            <v-card-title class="text-center">
-              <h3>
-                {{ form.formName }}
-              </h3>
-            </v-card-title>
-
             <v-card-text>
               <div v-if="form.formName === 'Register'">
                 <h2>

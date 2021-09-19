@@ -11,6 +11,7 @@
           clearable
           placeholder="Email"
           required
+          prepend-icon="mdi-email"
         ></v-text-field>
         <v-text-field
           name="password"
@@ -21,6 +22,7 @@
           clearable
           placeholder="Password"
           required
+          prepend-icon="mdi-key"
         ></v-text-field>
       </v-form>
     </v-card-text>
@@ -36,7 +38,7 @@
         @click.prevent="submitLoginData"
         elevation="0"
         :disabled="!formIsValid"
-        >Submit
+        >Log In
         <v-icon right>mdi-login</v-icon>
       </v-btn>
     </v-card-actions>

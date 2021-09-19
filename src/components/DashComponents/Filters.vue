@@ -1,9 +1,15 @@
 <template>
   <div>
     <v-card class="filter-display">
-      <v-card-title>
-        filters forlist here.
-      </v-card-title>
+      <v-card-text>
+        <v-text-field
+          prepend-icon="mdi-magnify"
+          v-model="searchTerm"
+          placeholder="Filter through your list..."
+          outlined
+          clearable
+        ></v-text-field>
+      </v-card-text>
       <v-card-actions>
         <AddBook />
       </v-card-actions>
@@ -22,8 +28,12 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      searchTerm: "",
+    };
   },
+
+  computed: {},
 };
 </script>
 

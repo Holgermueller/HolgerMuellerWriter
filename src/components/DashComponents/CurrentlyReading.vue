@@ -7,7 +7,7 @@
       <v-card-text>
         <h1>title of book here</h1>
 
-        <h3>Began reading date goes here</h3>
+        <h3>Began reading:</h3>
       </v-card-text>
       <v-card-actions>
         <UpdateStatusDialog />
