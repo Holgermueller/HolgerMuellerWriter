@@ -55,6 +55,10 @@ export default {
     formIsValid() {
       return this.email !== "" && this.password !== "";
     },
+
+    user() {
+      return this.$store.getters.user;
+    },
   },
 
   methods: {
@@ -64,6 +68,13 @@ export default {
 
     submitRegistrationData() {
       console.log(this.password, this.email);
+
+      let registrationData = {
+        password: this.password,
+        email: this.email,
+      };
+
+      this.$store.dispatch("registerUser", registrationData);
 
       this.clearForm();
     },

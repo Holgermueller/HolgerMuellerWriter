@@ -3,9 +3,31 @@ export default {
     user: null,
   },
 
-  mutations: {},
+  mutations: {
+    SET_USER(state, payload) {
+      state.user = payload;
+    },
+  },
 
-  actions: {},
+  actions: {
+    registerUser({ commit }, payload) {
+      let newUser = {
+        email: payload.email,
+        password: payload.password,
+      };
+
+      commit("SET_USER", newUser);
+    },
+
+    loginUser({ commit }, payload) {
+      let newUser = {
+        email: payload.email,
+        password: payload.password,
+      };
+
+      commit("SET_USER", newUser);
+    },
+  },
 
   getters: {
     user(state) {
