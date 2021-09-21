@@ -3,6 +3,7 @@
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
         <v-btn dark v-bind="attrs" v-on="on">
+          <v-icon class="mdi mdi-book" left></v-icon>
           Add a book
         </v-btn>
       </template>

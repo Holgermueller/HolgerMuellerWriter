@@ -2,7 +2,10 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn dark v-bind="attrs" v-on="on"> Update status</v-btn>
+        <v-btn dark v-bind="attrs" v-on="on">
+          <v-icon left>mdi-update</v-icon>
+          Update status</v-btn
+        >
       </template>
 
       <v-card>

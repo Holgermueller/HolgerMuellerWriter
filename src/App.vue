@@ -11,6 +11,8 @@
         Dash
       </v-btn>
 
+      <AddBook />
+
       <v-spacer></v-spacer>
 
       <v-btn>
@@ -26,10 +28,14 @@
 </template>
 
 <script>
+import AddBook from "./components/DashComponents/AddABook.vue";
+
 export default {
   name: "App",
 
-  components: {},
+  components: {
+    AddBook,
+  },
 
   data: () => ({
     //
