@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn dark v-on="on" v-bind="attrs">
+        <v-btn elevation="0" dark v-on="on" v-bind="attrs">
           Add Comment
         </v-btn>
       </template>
@@ -14,14 +14,16 @@
 
         <v-card-text>
           <v-form ref="form">
-            <v-textarea outlined></v-textarea>
+            <v-textarea v-model="comments" outlined></v-textarea>
           </v-form>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn dark @click="closeDialog">Cancel</v-btn>
+          <v-btn elevation="0" dark @click="closeDialog">Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-btn dark @click.prevent="submitComments">Submit</v-btn>
+          <v-btn elevation="0" dark @click.prevent="submitComments"
+            >Submit</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -35,6 +37,8 @@ export default {
   data() {
     return {
       dialog: false,
+
+      comments: "",
     };
   },
 
@@ -47,7 +51,12 @@ export default {
       this.$refs.form.reset();
     },
 
-    submitComments() {},
+    submitComments() {
+      console.log(this.comments);
+
+      this.clearForm();
+      this.closeDialog();
+    },
   },
 };
 </script>

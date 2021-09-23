@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn dark v-bind="attrs" v-on="on">
+        <v-btn elevation="0" dark v-bind="attrs" v-on="on">
           <v-icon left>mdi-update</v-icon>
           Update status</v-btn
         >
@@ -23,12 +23,14 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn @click.prevent="closeDialog && clearForm">
+          <v-btn elevation="0" dark @click.prevent="closeDialog && clearForm">
             <v-icon left>mdi-cancel</v-icon>
             cancel</v-btn
           >
           <v-spacer></v-spacer>
-          <v-btn @click.prevent="updateStatus">I'm finished!!</v-btn>
+          <v-btn elevation="0" dark @click.prevent="updateStatus"
+            >I'm finished!!</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-dialog>

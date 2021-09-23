@@ -2,20 +2,29 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn dark v-on="on" v-bind="attrs">Rate This Book</v-btn>
+        <v-btn elevation="0" dark v-on="on" v-bind="attrs"
+          >Rate This Book</v-btn
+        >
       </template>
 
       <v-card>
         <v-card-title>Rate This Book:</v-card-title>
 
         <v-card-text>
-          <v-select :items="items" filled label="Choose a number"></v-select>
+          <v-form ref="form">
+            <v-select
+              v-model="rating"
+              :items="items"
+              filled
+              label="Choose a number"
+            ></v-select>
+          </v-form>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn @click="closeDialog">Cancel</v-btn>
+          <v-btn elevation="0" @click="closeDialog">Cancel</v-btn>
           <v-spacer></v-spacer>
-          <v-btn @click.prevent="submitRating">Submit</v-btn>
+          <v-btn elevation="0" @click.prevent="submitRating">Submit</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -31,6 +40,8 @@ export default {
       dialog: false,
 
       items: [1, 2, 3, 4, 5],
+
+      rating: "",
     };
   },
 
@@ -39,7 +50,16 @@ export default {
       this.dialog = false;
     },
 
-    submitRating() {},
+    resetForm() {
+      this.$refs.form.reset();
+    },
+
+    submitRating() {
+      console.log(this.rating);
+
+      this.resetForm();
+      this.closeDialog();
+    },
   },
 };
 </script>
