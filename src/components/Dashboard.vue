@@ -2,11 +2,11 @@
   <div>
     <CurrentlyReadingDisplay />
 
-    <Filters />
+    <Filters :books="books" />
 
     <SortingButtonsDisplay />
 
-    <BooksReadDisplay />
+    <BooksReadDisplay :books="books" />
   </div>
 </template>
 
@@ -24,6 +24,12 @@ export default {
     Filters,
     SortingButtonsDisplay,
     BooksReadDisplay,
+  },
+
+  computed: {
+    books() {
+      return this.$store.getters.books;
+    },
   },
 };
 </script>

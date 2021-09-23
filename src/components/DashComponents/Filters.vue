@@ -18,13 +18,25 @@
 export default {
   name: "AlreadyReadFilters",
 
+  props: ["books"],
+
   data() {
     return {
       searchTerm: "",
     };
   },
 
-  computed: {},
+  computed: {
+    filterByTitle() {
+      if (this.searchTerm) {
+        return this.books.filter((singleBook) => {
+          return singleBook.title;
+        });
+      } else {
+        return this.books;
+      }
+    },
+  },
 };
 </script>
 

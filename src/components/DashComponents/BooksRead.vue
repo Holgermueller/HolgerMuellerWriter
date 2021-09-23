@@ -46,15 +46,7 @@
 export default {
   name: "BooksReadDisplay",
 
-  data() {
-    return {};
-  },
-
-  computed: {
-    books() {
-      return this.$store.getters.books;
-    },
-  },
+  props: ["books"],
 };
 </script>
 
