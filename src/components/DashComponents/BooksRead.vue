@@ -9,7 +9,7 @@
     </v-card>
 
     <v-card
-      v-for="(book, index) in books"
+      v-for="(book, index) in booksFilteredByTitle"
       :key="index"
       id="book.id"
       class="book-card"
@@ -46,7 +46,12 @@
 export default {
   name: "BooksReadDisplay",
 
-  props: ["books"],
+  props: {
+    booksFilteredByTitle: {
+      type: Array,
+      required: true,
+    },
+  },
 };
 </script>
 

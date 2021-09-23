@@ -7,28 +7,28 @@
       </v-card-title>
 
       <v-card-actions>
-        <v-btn @click="sortBy()">
+        <v-btn @click="sortBy('title')" elevation="0">
           <v-icon left>mdi-sort-alphabetical-ascending</v-icon>
           Title: A-z</v-btn
         >
 
         <v-spacer></v-spacer>
 
-        <v-btn @click="reverseSort()">
+        <v-btn @click="reverseSort('title')" elevation="0">
           <v-icon left>mdi-sort-alphabetical-descending</v-icon>
           Title: z-a</v-btn
         >
 
         <v-spacer></v-spacer>
 
-        <v-btn @click="sortBy()">
+        <v-btn @click="sortBy('author')" elevation="0">
           <v-icon left>mdi-sort-alphabetical-ascending</v-icon>
           Author: a-z</v-btn
         >
 
         <v-spacer></v-spacer>
 
-        <v-btn @click="reverseSort()">
+        <v-btn @click="reverseSort('author')" elevation="0">
           <v-icon left>mdi-sort-alphabetical-descending</v-icon>
           Author: z-a
         </v-btn>
@@ -41,16 +41,21 @@
 export default {
   name: "SortingButtonsDisplay",
 
-  props: {},
-
-  data() {
-    return {};
+  props: {
+    books: {
+      type: Array,
+      required: true,
+    },
   },
 
   methods: {
-    sortBy() {},
+    sortBy(prop) {
+      this.books.sort((a, b) => (a[prop] < b[prop] ? -1 : 1));
+    },
 
-    reverseSort() {},
+    reverseSort(prop) {
+      this.books.sort((a, b) => (a[prop] < b[prop] ? -1 : 1)).reverse();
+    },
   },
 };
 </script>
