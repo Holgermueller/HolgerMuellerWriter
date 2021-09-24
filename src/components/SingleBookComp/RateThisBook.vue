@@ -2,8 +2,9 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn elevation="0" dark v-on="on" v-bind="attrs"
-          >Rate This Book</v-btn
+        <v-btn elevation="0" dark v-on="on" v-bind="attrs">
+          <v-icon left>mdi-progress-star</v-icon>
+          Rate This Book</v-btn
         >
       </template>
 
@@ -22,9 +23,15 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn elevation="0" @click="closeDialog">Cancel</v-btn>
+          <v-btn elevation="0" @click="closeDialog" dark color="red">
+            <v-icon left>mdi-cancel</v-icon>
+            Cancel</v-btn
+          >
           <v-spacer></v-spacer>
-          <v-btn elevation="0" @click.prevent="submitRating">Submit</v-btn>
+          <v-btn elevation="0" @click.prevent="submitRating" color="blue" dark>
+            <v-icon left>mdi-progress-star</v-icon>
+            Submit</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-dialog>

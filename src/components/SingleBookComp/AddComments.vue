@@ -3,6 +3,7 @@
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
         <v-btn elevation="0" dark v-on="on" v-bind="attrs">
+          <v-icon left>mdi-note-edit</v-icon>
           Add Comment
         </v-btn>
       </template>
@@ -19,10 +20,19 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn elevation="0" dark @click="closeDialog">Cancel</v-btn>
+          <v-btn elevation="0" dark @click="closeDialog" color="red">
+            <v-icon left>mdi-cancel</v-icon>
+            Cancel</v-btn
+          >
           <v-spacer></v-spacer>
-          <v-btn elevation="0" dark @click.prevent="submitComments"
-            >Submit</v-btn
+          <v-btn
+            elevation="0"
+            dark
+            color="blue"
+            @click.prevent="submitComments"
+          >
+            <v-icon left>mdi-note-edit</v-icon>
+            Submit</v-btn
           >
         </v-card-actions>
       </v-card>

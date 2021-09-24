@@ -2,7 +2,7 @@
   <div class="text-center">
     <v-dialog v-model="dialog" width="500">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn elevation="0" dark v-bind="attrs" v-on="on">
+        <v-btn elevation="0" dark v-bind="attrs" v-on="on" color="primary">
           <v-icon class="mdi mdi-book" left></v-icon>
           Add a book
         </v-btn>
@@ -10,6 +10,7 @@
 
       <v-card>
         <v-card-title>
+          <v-icon left>mdi-book</v-icon>
           Add a book:
         </v-card-title>
 
@@ -42,9 +43,15 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn elevation="0" dark @click="closeDialog">Cancel</v-btn>
+          <v-btn elevation="0" dark @click="closeDialog" color="red">
+            <v-icon left>mdi-cancel</v-icon>
+            Cancel</v-btn
+          >
           <v-spacer> </v-spacer>
-          <v-btn elevation="0" dark @click.prevent="addBook">Add book</v-btn>
+          <v-btn elevation="0" dark @click.prevent="addBook" color="blue">
+            <v-icon left>mdi-book</v-icon>
+            Add book</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-dialog>
