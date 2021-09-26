@@ -7,7 +7,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn to="/dashboard">
+      <v-btn dark color="primary" elevation="0" to="/dashboard">
         Dash
       </v-btn>
 
@@ -15,7 +15,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn>
+      <v-btn elevation="0" dark color="primary">
         <span class="mr-2">Sign Out</span>
         <v-icon right>mdi-logout</v-icon>
       </v-btn>

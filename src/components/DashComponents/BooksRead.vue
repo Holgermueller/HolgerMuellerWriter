@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="alreadyReadCards">
     <v-card class="section-header">
       <v-card-title>
         <h1>
@@ -56,6 +56,10 @@ export default {
 </script>
 
 <style scoped>
+#alreadyReadCards {
+  margin-bottom: 7%;
+}
+
 .section-header {
   width: 75%;
   margin: 4px auto;
