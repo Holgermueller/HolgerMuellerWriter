@@ -15,7 +15,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn elevation="0" dark color="primary">
+      <v-btn elevation="0" dark color="primary" @click.prevent="logoutUser">
         <span class="mr-2">Sign Out</span>
         <v-icon right>mdi-logout</v-icon>
       </v-btn>
@@ -40,5 +40,11 @@ export default {
   data: () => ({
     //
   }),
+
+  methods: {
+    logoutUser() {
+      this.$store.dispatch("logoutUser");
+    },
+  },
 };
 </script>

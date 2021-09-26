@@ -37,6 +37,12 @@ export default {
 
       commit("ADD_BOOK", book);
     },
+
+    finishReadingBook() {},
+
+    addCommentsForBook() {},
+
+    rateBook() {},
   },
 
   getters: {

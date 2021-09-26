@@ -27,6 +27,12 @@ export default {
 
       commit("SET_USER", newUser);
     },
+
+    logoutUser({ commit }) {
+      commit("SET_USER", null);
+    },
+
+    deleteAccount() {},
   },
 
   getters: {
