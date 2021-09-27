@@ -13,6 +13,8 @@
 
       <AddBook />
 
+      <v-switch class="px-0" inset></v-switch>
+
       <v-spacer></v-spacer>
 
       <v-btn elevation="0" dark color="primary" @click.prevent="logoutUser">

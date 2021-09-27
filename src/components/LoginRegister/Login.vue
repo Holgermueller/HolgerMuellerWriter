@@ -28,7 +28,13 @@
     </v-card-text>
 
     <v-card-actions>
-      <v-btn id="cancel" @click.prevent="clearForm" elevation="0">
+      <v-btn
+        id="cancel"
+        @click.prevent="clearForm"
+        elevation="0"
+        dark
+        color="red"
+      >
         <v-icon left>mdi-cancel</v-icon>
         Cancel
       </v-btn>
@@ -38,6 +44,8 @@
         @click.prevent="submitLoginData"
         elevation="0"
         :disabled="!formIsValid"
+        dark
+        color="primary"
         >Log In
         <v-icon right>mdi-login</v-icon>
       </v-btn>
