@@ -2,13 +2,13 @@
   <div>
     <v-card class="currently-reading-display">
       <v-card-title>
-        <h1>Currently reading:</h1>
+        <h1>Currently reading: title here</h1>
       </v-card-title>
-      <v-card-text>
-        <h1>title of book here</h1>
 
-        <h3>Began reading:</h3>
-      </v-card-text>
+      <v-card-subtitle>
+        <h3>Began reading: date here | calc days</h3>
+      </v-card-subtitle>
+      <v-card-text> </v-card-text>
       <v-card-actions>
         <UpdateStatusDialog />
       </v-card-actions>

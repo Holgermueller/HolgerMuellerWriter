@@ -13,7 +13,7 @@
 
       <AddBook />
 
-      <v-switch class="px-0" inset></v-switch>
+      <SettingsDialog />
 
       <v-spacer></v-spacer>
 
@@ -31,17 +31,19 @@
 
 <script>
 import AddBook from "./components/DashComponents/AddABook.vue";
+import SettingsDialog from "./components/UserSettings/SettingsDialog.vue";
 
 export default {
   name: "App",
 
   components: {
     AddBook,
+    SettingsDialog,
   },
 
-  data: () => ({
-    //
-  }),
+  data() {
+    return {};
+  },
 
   methods: {
     logoutUser() {
