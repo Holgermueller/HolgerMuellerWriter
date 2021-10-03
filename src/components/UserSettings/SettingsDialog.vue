@@ -15,6 +15,15 @@
 
         <v-card-text>
           <v-form>
+            <v-text-field
+              v-model="username"
+              type="text"
+              label="Add username"
+              outlined
+              clearable
+            >
+            </v-text-field>
+
             <v-switch
               prepend-icon="mdi-white-balance-sunny"
               append-icon="mdi-moon-waning-crescent"
@@ -46,6 +55,7 @@ export default {
   data() {
     return {
       dialog: false,
+      username: "",
     };
   },
 

@@ -19,22 +19,26 @@
             <v-container>
               <v-row>
                 <v-text-field
+                  type="text"
                   id="title"
                   v-model="title"
+                  :rules="rules.title"
                   outlined
                   clearable
-                  placeholder="Title..."
+                  label="Title"
                 >
                 </v-text-field>
               </v-row>
 
               <v-row>
                 <v-text-field
+                  type="text"
                   id="author"
                   v-model="author"
+                  :rules="rules.author"
                   outlined
                   clearable
-                  placeholder="Author"
+                  label="Author"
                 >
                 </v-text-field>
               </v-row>
@@ -48,7 +52,13 @@
             Cancel</v-btn
           >
           <v-spacer> </v-spacer>
-          <v-btn elevation="0" dark @click.prevent="addBook" color="blue">
+          <v-btn
+            elevation="0"
+            dark
+            @click.prevent="addBook"
+            :disabled="!formIsValid"
+            color="blue"
+          >
             <v-icon left>mdi-book</v-icon>
             Add book</v-btn
           >
@@ -67,7 +77,17 @@ export default {
       dialog: false,
       title: "",
       author: "",
+      rules: {
+        title: [(val) => (val || "").length > 0 || "This field is required."],
+        author: [(val) => (val || "").length > 0 || "This field is required."],
+      },
     };
+  },
+
+  computed: {
+    formIsValid() {
+      return this.title !== "" && this.author !== "";
+    },
   },
 
   methods: {

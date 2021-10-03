@@ -63,6 +63,8 @@ export default {
     },
 
     updateStatus() {},
+
+    finishedReading() {},
   },
 };
 </script>

@@ -6,21 +6,24 @@
           name="email"
           type="email"
           v-model="email"
+          :rules="rules.email"
           id="emailLogin"
           outlined
           clearable
-          placeholder="Email"
+          label="Email"
           required
           prepend-icon="mdi-email"
         ></v-text-field>
+
         <v-text-field
           name="password"
           type="password"
           v-model="password"
+          :rules="rules.password"
           id="passwordLogin"
           outlined
           clearable
-          placeholder="Password"
+          label="Password"
           required
           prepend-icon="mdi-key"
         ></v-text-field>
@@ -61,6 +64,12 @@ export default {
     return {
       email: "",
       password: "",
+      rules: {
+        email: [(val) => (val || "").length > 0 || "This field is required."],
+        password: [
+          (val) => (val || "").length > 0 || "This field is required.",
+        ],
+      },
     };
   },
 
