@@ -15,10 +15,19 @@
 
         <v-card-text>
           <v-form ref="form">
-            <v-textarea
-              placeholder="Any comments to add?"
+            <v-text-field
+              v-model="currentPage"
+              id="currentPage"
+              label="Page"
               outlined
-            ></v-textarea>
+            ></v-text-field>
+
+            <v-text-field
+              v-model="lastPage"
+              id="lastPage"
+              label="of"
+              outlined
+            ></v-text-field>
           </v-form>
         </v-card-text>
 
@@ -33,7 +42,25 @@
             cancel</v-btn
           >
           <v-spacer></v-spacer>
-          <v-btn elevation="0" color="blue" dark @click.prevent="updateStatus"
+          <v-btn
+            elevation="0"
+            dark
+            color="primary"
+            @click.prevent="updateStatus"
+          >
+            Update Status
+          </v-btn>
+        </v-card-actions>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-btn
+            elevation="0"
+            color="primary"
+            dark
+            block
+            @click.prevent="finishedReading"
             >I'm finished!!</v-btn
           >
         </v-card-actions>
@@ -50,6 +77,8 @@ export default {
     return {
       dialog: false,
       finished: false,
+      currentPage: "",
+      lastPage: "",
     };
   },
 
