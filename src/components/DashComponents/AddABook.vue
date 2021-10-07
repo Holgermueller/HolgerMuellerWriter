@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="dialog" width="500">
+    <v-dialog v-model="dialog" width="500" persistent>
       <template v-slot:activator="{ on, attrs }">
         <v-btn elevation="0" dark v-bind="attrs" v-on="on" color="primary">
           <v-icon class="mdi mdi-book" left></v-icon>
@@ -47,7 +47,15 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn elevation="0" dark @click="closeDialog" color="red">
+          <v-btn
+            elevation="0"
+            dark
+            @click="
+              closeDialog();
+              clearForm();
+            "
+            color="red"
+          >
             <v-icon left>mdi-cancel</v-icon>
             Cancel</v-btn
           >
@@ -93,6 +101,8 @@ export default {
   methods: {
     clearForm() {
       this.$refs.form.reset();
+      this.title = "";
+      this.author = "";
     },
 
     closeDialog() {

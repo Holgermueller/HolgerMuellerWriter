@@ -85,6 +85,8 @@ export default {
   methods: {
     clearForm() {
       this.$refs.form.reset();
+      this.password = "";
+      this.email = "";
     },
 
     submitRegistrationData() {

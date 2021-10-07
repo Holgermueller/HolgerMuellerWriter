@@ -10,35 +10,22 @@
 
       <v-card class="settings-dialog">
         <v-card-title>
-          Settings
+          <v-icon left>
+            mdi-cog
+          </v-icon>
+          Settings:
         </v-card-title>
 
         <v-card-text>
-          <v-form>
-            <v-text-field
-              v-model="username"
-              type="text"
-              label="Add username"
-              outlined
-              clearable
-            >
-            </v-text-field>
+          <v-expansion-panels inset focusable>
+            <UsernameExpansionPanel />
 
-            <v-switch
-              prepend-icon="mdi-white-balance-sunny"
-              append-icon="mdi-moon-waning-crescent"
-              label="Night mode"
-              class="px-0"
-              inset
-              color="white"
-              :ripple="false"
-              @change="toggleDark"
-            ></v-switch>
-          </v-form>
+            <NightModeExpansionPanel />
+          </v-expansion-panels>
         </v-card-text>
 
         <v-card-actions>
-          <v-btn elevation="0" dark @click="closeDialog" color="red">
+          <v-btn elevation="0" dark @click="closeDialog" color="red" block>
             <v-icon left>mdi-cancel</v-icon>
             Close</v-btn
           >
@@ -49,23 +36,26 @@
 </template>
 
 <script>
+import UsernameExpansionPanel from "./UsernameExpPanel.vue";
+import NightModeExpansionPanel from "./NightModeExpPanel.vue";
+
 export default {
   name: "SettingsDialog",
+
+  components: {
+    UsernameExpansionPanel,
+    NightModeExpansionPanel,
+  },
 
   data() {
     return {
       dialog: false,
-      username: "",
     };
   },
 
   methods: {
     closeDialog() {
       this.dialog = false;
-    },
-
-    toggleDark() {
-      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
     },
   },
 };
@@ -74,5 +64,9 @@ export default {
 <style scoped>
 .settings-dialog {
   border: 2px solid skyblue;
+}
+
+.v-expansion-panels ::before {
+  box-shadow: none;
 }
 </style>

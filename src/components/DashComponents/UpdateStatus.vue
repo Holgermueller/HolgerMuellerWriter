@@ -1,6 +1,6 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="dialog" width="500">
+    <v-dialog v-model="dialog" width="500" persistent>
       <template v-slot:activator="{ on, attrs }">
         <v-btn elevation="0" color="primary" dark v-bind="attrs" v-on="on">
           <v-icon left>mdi-update</v-icon>
@@ -36,7 +36,10 @@
             elevation="0"
             color="red"
             dark
-            @click.prevent="closeDialog && clearForm"
+            @click.prevent="
+              closeDialog();
+              clearForm();
+            "
           >
             <v-icon left>mdi-cancel</v-icon>
             cancel</v-btn
@@ -91,9 +94,13 @@ export default {
       this.$refs.form.reset();
     },
 
-    updateStatus() {},
+    updateStatus() {
+      console.log("updated");
+    },
 
-    finishedReading() {},
+    finishedReading() {
+      console.log("finished");
+    },
   },
 };
 </script>
