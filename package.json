@@ -1,5 +1,5 @@
 {
-  "name": "vue-aws",
+  "name": "holger-mueller-writer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,9 +8,6 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@aws-amplify/ui-components": "^1.8.0",
-    "@aws-amplify/ui-vue": "^1.1.13",
-    "aws-amplify": "^4.2.11",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-router": "^3.5.2",
