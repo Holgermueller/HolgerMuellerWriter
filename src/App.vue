@@ -10,13 +10,21 @@
     <v-main>
       <Bio />
       <Portfolio />
+      <Experience />
+      <Education />
+      <Interests />
     </v-main>
+
+    <v-footer>&copy; 2022 Holger Mueller</v-footer>
   </v-app>
 </template>
 
 <script>
 import Bio from "./components/Bio.vue";
 import Portfolio from "./components/Portfolio.vue";
+import Experience from "./components/Experience.vue";
+import Education from "./components/Education.vue";
+import Interests from "./components/Interests.vue";
 
 export default {
   name: "App",
@@ -24,6 +32,9 @@ export default {
   components: {
     Bio,
     Portfolio,
+    Experience,
+    Education,
+    Interests,
   },
 
   data() {
@@ -33,3 +44,9 @@ export default {
   methods: {},
 };
 </script>
+
+<style scoped>
+.v-main {
+  text-align: center;
+}
+</style>
