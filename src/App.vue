@@ -26,7 +26,7 @@
           <v-tab-item v-for="item in items" :key="item.name">
             <v-card>
               <v-card-text>
-                <div v-if="item.name === 'Bio'">
+                <div v-if="item.name === 'About'">
                   <Bio />
                 </div>
 
@@ -85,7 +85,7 @@ export default {
       tab: null,
       items: [
         {
-          name: "Bio",
+          name: "About",
         },
         {
           name: "Portfolio",

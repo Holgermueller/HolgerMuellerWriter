@@ -34,6 +34,7 @@
     </v-form>
 
     <div id="SocialMedia" class="socials">
+      <h3>Or just be sociable:</h3>
       <v-btn x-large icon>
         <v-icon>mdi-twitter</v-icon>
       </v-btn>
