@@ -22,7 +22,22 @@
             theater, assisting at a community care home for psychiatric
             outpatients from the VA hospital system, quite a few miserable years
             in retail, a clickbait writer, and as an English tutor and teacher,
-            both in the States and in Korea.
+            both at a community college in upstate New York and in Korea.
+          </p>
+        </v-col>
+      </v-row>
+
+      <v-row>
+        <v-col class="bio">
+          <h2 class="bio-header">Interests</h2>
+          <p class="bio-piece">
+            In addition to writing, I enjoy movies, with a fondness for
+            comedies; reading and writing, I recently rediscovered my affection
+            for sci-fi and fantasy, and Marvel comics hold a special place in my
+            heart; travel, having visited Australia, Republic of Korea, Canada,
+            Italy, and France, and I have a few other countries on my bucket
+            list. And I enjoy exercising, kind of. To put it more clearly, I
+            always regret not working out. I never regret working out.
           </p>
         </v-col>
       </v-row>
