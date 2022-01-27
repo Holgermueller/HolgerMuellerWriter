@@ -3,7 +3,11 @@
     <h1>Experience</h1>
 
     <div>
-      <h3>Get full resume here => (link icon here)</h3>
+      <h3>
+        Get full resume here
+        <v-icon>mdi-arrow-right</v-icon>
+        <v-icon> mdi-file-download-outline </v-icon>
+      </h3>
     </div>
 
     <div v-for="job in jobs" :key="job.placeOfEmployment">

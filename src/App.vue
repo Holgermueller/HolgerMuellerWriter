@@ -1,27 +1,35 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <h1>Holger Mueller Writer</h1>
-      <v-spacer></v-spacer>
-      <div>
-        <v-btn x-large icon dark>
-          <v-icon>mdi-twitter</v-icon>
-        </v-btn>
-        <v-btn x-large icon dark>
-          <v-icon>mdi-instagram</v-icon>
-        </v-btn>
-      </div>
+    <v-app-bar app color="primary" dark dense>
+      <v-container>
+        <v-row no-gutters>
+          <v-col class="name">
+            <h1>Holger Mueller</h1>
+          </v-col>
+
+          <v-col class="nav">
+            <v-tabs background-color="transparent" v-model="tab">
+              <v-tabs-slider color="white"></v-tabs-slider>
+              <v-tab v-for="item in items" :key="item.name">
+                {{ item.name }}
+              </v-tab>
+            </v-tabs>
+          </v-col>
+
+          <v-col class="socials">
+            <v-btn small icon dark>
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn small icon dark>
+              <v-icon>mdi-instagram</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-app-bar>
 
     <v-main>
       <v-card class="content-display" elevation="0" tile>
-        <v-tabs v-model="tab" fixed-tabs>
-          <v-tabs-slider color="blue"></v-tabs-slider>
-          <v-tab v-for="item in items" :key="item.name">
-            {{ item.name }}
-          </v-tab>
-        </v-tabs>
-
         <v-tabs-items v-model="tab">
           <v-tab-item v-for="item in items" :key="item.name">
             <v-card>
@@ -42,21 +50,36 @@
                   <Education />
                 </div>
 
-                <div v-else-if="item.name === 'Interests'">
-                  <Interests />
-                </div>
-
                 <div v-else>
                   <Contact />
                 </div>
+                <v-footer padless>
+                  <v-container>
+                    <v-row>
+                      <v-col>
+                        <div class="copy">
+                          Copyright &copy; 2022 Holger Mueller
+                        </div>
+                      </v-col>
+                      <v-col>
+                        <div class="social-foot">
+                          <v-btn icon>
+                            <v-icon>mdi-twitter</v-icon>
+                          </v-btn>
+                          <v-btn icon>
+                            <v-icon>mdi-instagram</v-icon>
+                          </v-btn>
+                        </div>
+                      </v-col>
+                    </v-row>
+                  </v-container>
+                </v-footer>
               </v-card-text>
             </v-card>
           </v-tab-item>
         </v-tabs-items>
       </v-card>
     </v-main>
-
-    <v-footer>&copy; 2022 Holger Mueller</v-footer>
   </v-app>
 </template>
 
@@ -65,7 +88,6 @@ import Bio from "./components/Bio.vue";
 import Portfolio from "./components/Portfolio.vue";
 import Experience from "./components/Experience.vue";
 import Education from "./components/Education.vue";
-import Interests from "./components/Interests.vue";
 import Contact from "./components/Contact.vue";
 
 export default {
@@ -76,7 +98,6 @@ export default {
     Portfolio,
     Experience,
     Education,
-    Interests,
     Contact,
   },
 
@@ -97,9 +118,6 @@ export default {
           name: "Education",
         },
         {
-          name: "Interests",
-        },
-        {
           name: "Contact",
         },
       ],
@@ -114,6 +132,15 @@ export default {
 #app {
   background-color: red;
 }
+
+.name {
+  text-align: left;
+}
+
+.socials {
+  text-align: right;
+  margin: auto;
+}
 .v-main {
   text-align: center;
   width: 85%;
@@ -122,5 +149,15 @@ export default {
 }
 .content-display {
   height: 100%;
+}
+footer {
+  margin-top: 24px;
+  bottom: 0;
+}
+.copy {
+  text-align: left;
+}
+.social-foot {
+  text-align: right;
 }
 </style>
