@@ -1,31 +1,31 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark dense>
-      <b-container fluid>
-        <b-row>
-          <b-col class="name">
-            <h1>HolgerMueller</h1>
-          </b-col>
+      <v-container fluid>
+        <v-row>
+          <v-col class="name">
+            <h1>Holger Mueller</h1>
+          </v-col>
 
-          <b-collapse>
-            <b-col>
-              <v-tabs background-color="transparent" v-model="tab">
-                <v-tabs-slider color="white"></v-tabs-slider>
-                <v-tab v-for="item in items" :key="item.name">
-                  {{ item.name }}
-                </v-tab>
-              </v-tabs>
-            </b-col>
-          </b-collapse>
+          <v-col>
+            <v-tabs background-color="transparent" v-model="tab">
+              <v-tabs-slider color="white"></v-tabs-slider>
+              <v-tab v-for="item in items" :key="item.name">
+                {{ item.name }}
+              </v-tab>
+            </v-tabs>
+          </v-col>
 
-          <b-col class="socials">
-            <b-button> <b-icon icon="twitter"></b-icon></b-button>
-            <b-button>
-              <b-icon icon="instagram"></b-icon>
-            </b-button>
-          </b-col>
-        </b-row>
-      </b-container>
+          <v-col class="socials">
+            <v-btn icon>
+              <v-icon>mdi-twitter</v-icon>
+            </v-btn>
+            <v-btn icon>
+              <v-icon> mdi-instagram </v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-container>
     </v-app-bar>
 
     <v-main>
@@ -132,11 +132,9 @@ export default {
 #app {
   background-color: red;
 }
-
 .name {
   text-align: left;
 }
-
 .socials {
   text-align: right;
   margin: auto;
