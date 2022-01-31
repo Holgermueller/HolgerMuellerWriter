@@ -53,31 +53,33 @@
                 <div v-else>
                   <Contact />
                 </div>
-                <v-footer padless>
-                  <v-container>
-                    <v-row>
-                      <v-col>
-                        <div class="copy">
-                          Copyright &copy; 2022 Holger Mueller
-                        </div>
-                      </v-col>
-                      <v-col>
-                        <div class="social-foot">
-                          <v-btn icon>
-                            <v-icon>mdi-twitter</v-icon>
-                          </v-btn>
-                          <v-btn icon>
-                            <v-icon>mdi-instagram</v-icon>
-                          </v-btn>
-                        </div>
-                      </v-col>
-                    </v-row>
-                  </v-container>
-                </v-footer>
               </v-card-text>
             </v-card>
           </v-tab-item>
         </v-tabs-items>
+        <v-card-action>
+          <v-footer padless>
+            <v-container>
+              <v-row>
+                <v-col>
+                  <div class="copy">
+                    <h6>Copyright &copy; 2022 Holger Mueller</h6>
+                  </div>
+                </v-col>
+                <v-col>
+                  <div class="social-foot">
+                    <v-btn x-small icon>
+                      <v-icon>mdi-twitter</v-icon>
+                    </v-btn>
+                    <v-btn x-small icon>
+                      <v-icon>mdi-instagram</v-icon>
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-row>
+            </v-container>
+          </v-footer>
+        </v-card-action>
       </v-card>
     </v-main>
   </v-app>
@@ -123,14 +125,12 @@ export default {
       ],
     };
   },
-
-  methods: {},
 };
 </script>
 
 <style scoped>
 #app {
-  background-color: red;
+  background-color: navy;
 }
 .name {
   text-align: left;
@@ -149,7 +149,8 @@ export default {
   height: 100%;
 }
 footer {
-  margin-top: 24px;
+  width: 90%;
+  margin: 24px auto 0;
   bottom: 0;
 }
 .copy {
