@@ -57,7 +57,7 @@
             </v-card>
           </v-tab-item>
         </v-tabs-items>
-        <v-card-action>
+        <v-card-actions>
           <v-footer padless>
             <v-container>
               <v-row>
@@ -79,7 +79,7 @@
               </v-row>
             </v-container>
           </v-footer>
-        </v-card-action>
+        </v-card-actions>
       </v-card>
     </v-main>
   </v-app>

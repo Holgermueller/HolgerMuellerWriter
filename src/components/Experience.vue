@@ -6,7 +6,9 @@
       <h3>
         Get full resume here
         <v-icon>mdi-arrow-right</v-icon>
-        <v-icon> mdi-file-download-outline </v-icon>
+        <a href="../assets/Resume.pdf" download="">
+          <v-icon> mdi-file-download-outline </v-icon></a
+        >
       </h3>
     </div>
 
@@ -96,6 +98,9 @@ export default {
 }
 h1 {
   margin: 8px 0;
+}
+a {
+  text-decoration: none;
 }
 
 .years-worked {
