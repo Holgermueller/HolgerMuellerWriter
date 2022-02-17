@@ -17,12 +17,13 @@
           </v-col>
 
           <v-col class="socials">
-            <v-btn icon>
+            <a href="https://twitter.com/thatHMMueller" target="_blank">
               <v-icon>mdi-twitter</v-icon>
-            </v-btn>
-            <v-btn icon>
-              <v-icon> mdi-instagram </v-icon>
-            </v-btn>
+            </a>
+
+            <a href="https://twitter.com/thatHMMueller" target="_blank">
+              <v-icon>mdi-instagram</v-icon>
+            </a>
           </v-col>
         </v-row>
       </v-container>
@@ -68,12 +69,12 @@
                 </v-col>
                 <v-col>
                   <div class="social-foot">
-                    <v-btn x-small icon>
+                    <a href="https://twitter.com/thatHMMueller" target="_blank">
                       <v-icon>mdi-twitter</v-icon>
-                    </v-btn>
-                    <v-btn x-small icon>
+                    </a>
+                    <a href="https://twitter.com/thatHMMueller" target="_blank">
                       <v-icon>mdi-instagram</v-icon>
-                    </v-btn>
+                    </a>
                   </div>
                 </v-col>
               </v-row>
@@ -131,6 +132,9 @@ export default {
 <style scoped>
 #app {
   background-color: navy;
+}
+a {
+  text-decoration: none;
 }
 .name {
   text-align: left;

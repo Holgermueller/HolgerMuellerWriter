@@ -35,12 +35,12 @@
 
     <div id="SocialMedia" class="socials">
       <h3>Or just be sociable:</h3>
-      <v-btn x-large icon>
+      <a href="https://twitter.com/thatHMMueller" target="_blank">
         <v-icon>mdi-twitter</v-icon>
-      </v-btn>
-      <v-btn x-large icon>
+      </a>
+      <a href="https://twitter.com/thatHMMueller" target="_blank">
         <v-icon>mdi-instagram</v-icon>
-      </v-btn>
+      </a>
     </div>
   </div>
 </template>
@@ -81,5 +81,9 @@ export default {
 }
 .socials {
   margin: 5% auto;
+}
+a {
+  text-decoration: none;
+  margin: 10px;
 }
 </style>
